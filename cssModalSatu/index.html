@@ -16,8 +16,8 @@
     />
   </head>
   <body>
-    <button>Open Modal</button>
-    <div class="modal-background"></div>
+    <button onclick="toggleModal()" type="button">Open Modal</button>
+    <div class="modal-background" onclick="toggleModal()"></div>
     <div class="modal">
       <h2>Modal Window</h2>
       <p>
@@ -25,5 +25,20 @@
         displaying critical information.
       </p>
     </div>
+
+    <!-- Javascript -->
+    <script>
+      const toggleModal = () => {
+        const bodyClassList = document.body.classList;
+
+        if (bodyClassList.contains("open")) {
+          bodyClassList.remove("open");
+          bodyClassList.add("closed");
+        } else {
+          bodyClassList.remove("closed");
+          bodyClassList.add("open");
+        }
+      };
+    </script>
   </body>
 </html>
